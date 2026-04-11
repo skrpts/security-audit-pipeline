@@ -37,8 +37,14 @@ jobs:
           echo "slug=$(basename "$GITHUB_REPOSITORY")" >> "$GITHUB_OUTPUT"
 
       - name: Fetch scanner from Hub repo
+        env:
+          SCANNER_REPO_TOKEN: ${{ secrets.SCANNER_REPO_TOKEN }}
         run: |
-          curl -sf "https://raw.githubusercontent.com/skrptiq/skrptiq-hub/main/scripts/scanning/scan-skrpt.mjs" -o /tmp/scan-skrpt.mjs
+          curl -sf \
+            -H "Authorization: Bearer ${SCANNER_REPO_TOKEN}" \
+            -H "Accept: application/vnd.github.raw+json" \
+            "https://api.github.com/repos/skrptiq/skrptiq-hub/contents/scripts/scanning/scan-skrpt.mjs?ref=main" \
+            -o /tmp/scan-skrpt.mjs
           SCANNER_VER=$(grep 'SCANNER_VERSION' /tmp/scan-skrpt.mjs | head -1 | grep -o "'[^']*'" | tr -d "'")
           echo "Using scanner v${SCANNER_VER}"
 
