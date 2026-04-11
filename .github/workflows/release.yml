@@ -233,8 +233,9 @@ jobs:
           for (const s of requires.services) { (SVC_DOMAINS[s]||[]).forEach(d=>implDom.add(d)); (SVC_PERMS[s]||[]).forEach(p=>implPerm.add(p)); }
           for (const f of findings) {
             if (f.category==="services") { f.declared=dSvc.has(f.detected); if(f.declared)f.severity="info"; }
-            else if (f.category==="permissions") { f.declared=dPerm.has(f.detected); if(!f.declared&&f.detected.startsWith("network:")) { if(implDom.has(f.detected.slice(8)))f.declared=true; } if(!f.declared&&implPerm.has(f.detected))f.declared=true; if(f.declared&&f.severity==="warn")f.severity="info"; }
+            else if (f.category==="permissions") { f.declared=dPerm.has(f.detected); if(!f.declared&&f.detected.startsWith("network:")) { if(implDom.has(f.detected.slice(8)))f.declared=true; } if(!f.declared&&implPerm.has(f.detected))f.declared=true; if(f.declared)f.severity="info"; }
             else if (f.category==="data_handling") { f.declared=dDH.has(f.detected); if(f.declared)f.severity="info"; }
+            else if (f.category==="credentials") { f.declared=dDH.has("credentials"); if(f.declared&&f.rule!=="hardcoded-secret")f.severity="info"; }
           }
 
           // Build summary
