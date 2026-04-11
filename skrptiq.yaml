@@ -3,7 +3,7 @@ id: "c9d5e32b-8a14-4f7c-b2c6-4e0f9d3a1b58"
 name: "security-audit-pipeline"
 display_name: "Security Audit Pipeline"
 description: "Scan code for vulnerabilities, categorise findings by OWASP type, prioritise by severity, and produce a remediation roadmap"
-version: "1.0.3"
+version: "1.0.4"
 engine: ">=1.0.0"
 
 # --- Attribution ---
