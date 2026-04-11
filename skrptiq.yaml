@@ -1,0 +1,46 @@
+# --- Identity ---
+id: "c9d5e32b-8a14-4f7c-b2c6-4e0f9d3a1b58"
+name: "security-audit-pipeline"
+display_name: "Security Audit Pipeline"
+description: "Scan code for vulnerabilities, categorise findings by OWASP type, prioritise by severity, and produce a remediation roadmap"
+version: "1.0.0"
+engine: ">=1.0.0"
+
+# --- Attribution ---
+author:
+  name: "skrptiq"
+  url: "https://hub.skrptiq.ai"
+
+licence: "MIT"
+repository: "https://github.com/skrpts/security-audit-pipeline"
+
+# --- Discovery (Hub) ---
+category: "developer"
+tags:
+  - "security"
+  - "audit"
+  - "owasp"
+  - "vulnerability"
+  - "code-review"
+
+# --- Security & Access ---
+requires:
+  services:
+    - "llm-service"
+  permissions:
+    - "filesystem:read"
+    - "shell:execute"
+  data_handling:
+    - "source-code"
+    - "pii"
+    - "credentials"
+
+# --- Contents ---
+contents:
+  skills: 5
+  prompts: 5
+  workflows: 1
+  services: 1
+  sources: 1
+  assets: 1
+  total: 14
