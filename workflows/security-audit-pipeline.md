@@ -30,16 +30,12 @@ execution:
     step_type: "synthesis"
   - skill: "finding-categorisation"
     step_type: "synthesis"
-    input_from: "vulnerability-scanning"
   - skill: "severity-assessment"
     step_type: "synthesis"
-    input_from: "finding-categorisation"
   - skill: "remediation-planning"
     step_type: "synthesis"
-    input_from: "severity-assessment"
   - skill: "executive-reporting"
     step_type: "synthesis"
-    input_from: "remediation-planning"
 ---
 
 ## Overview
