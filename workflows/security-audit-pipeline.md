@@ -25,6 +25,13 @@ metadata:
   estimated_duration: "60-180 seconds"
   avg_tokens: 10000
   trigger: manual
+output_step: "executive-reporting"
+composite_steps:
+  - "vulnerability-scanning"
+  - "finding-categorisation"
+  - "severity-assessment"
+  - "remediation-planning"
+  - "executive-reporting"
 execution:
   - skill: "vulnerability-scanning"
     step_type: "synthesis"

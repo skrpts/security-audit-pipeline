@@ -3,7 +3,7 @@ id: "c9d5e32b-8a14-4f7c-b2c6-4e0f9d3a1b58"
 name: "security-audit-pipeline"
 display_name: "Security Audit Pipeline"
 description: "Scan code for vulnerabilities, categorise findings by OWASP type, prioritise by severity, and produce a remediation roadmap"
-version: "1.0.8"
+version: "1.0.10"
 engine: ">=1.0.0"
 
 # --- Attribution ---
@@ -35,15 +35,6 @@ requires:
     - "pii"
     - "credentials"
 
-# --- Output ---
-output_step: "executive-reporting"
-composite_steps:
-  - "vulnerability-scanning"
-  - "finding-categorisation"
-  - "severity-assessment"
-  - "remediation-planning"
-  - "executive-reporting"
-
 # --- Contents ---
 contents:
   skills: 5
@@ -51,5 +42,6 @@ contents:
   workflows: 1
   services: 1
   sources: 1
+  documents: 0
   assets: 1
   total: 14
