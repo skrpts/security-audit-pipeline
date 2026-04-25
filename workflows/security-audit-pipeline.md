@@ -15,6 +15,12 @@ connections:
     type: uses
   - target: executive-reporting
     type: uses
+  - target: language-polish
+    type: uses
+  - target: consistency-check
+    type: uses
+  - target: brief-compliance-check
+    type: uses
   - target: llm-service
     type: runs_on
   - target: owasp-top-10-reference
@@ -25,13 +31,16 @@ metadata:
   estimated_duration: "60-180 seconds"
   avg_tokens: 10000
   trigger: manual
-output_step: "executive-reporting"
+output_step: "language-polish"
 composite_steps:
   - "vulnerability-scanning"
   - "finding-categorisation"
   - "severity-assessment"
   - "remediation-planning"
   - "executive-reporting"
+  - "language-polish"
+  - "consistency-check"
+  - "brief-compliance-check"
 execution:
   - skill: "vulnerability-scanning"
     step_type: "synthesis"
@@ -43,6 +52,13 @@ execution:
     step_type: "synthesis"
   - skill: "executive-reporting"
     step_type: "synthesis"
+  - skill: "language-polish"
+    step_type: "content"
+  - parallel:
+    - skill: "consistency-check"
+      step_type: "review"
+    - skill: "brief-compliance-check"
+      step_type: "review"
 ---
 
 ## Overview
