@@ -1,5 +1,8 @@
 # Release Notes
 
+## v1.0.22
+Wave 2: re-signed with canonical engine signing pipeline.
+
 ## v1.0.21
 Tags migrated inline into manifest (GH#586). tags.yaml retired.
 
