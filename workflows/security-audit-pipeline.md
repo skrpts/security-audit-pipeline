@@ -45,21 +45,27 @@ execution:
   - skill: "vulnerability-scanning"
     prompt: "scan-vulnerabilities"
     step_type: "synthesis"
+    output: { name: "vulnerabilities", type: "list" }
   - skill: "finding-categorisation"
     prompt: "categorise-findings"
     step_type: "synthesis"
+    output: { name: "categorised_findings", type: "text" }
   - skill: "severity-assessment"
     prompt: "assess-severity"
     step_type: "synthesis"
+    output: { name: "severity_assessment", type: "text" }
   - skill: "remediation-planning"
     prompt: "plan-remediation"
     step_type: "synthesis"
+    output: { name: "remediation_plan", type: "text" }
   - skill: "executive-reporting"
     prompt: "write-executive-report"
     step_type: "synthesis"
+    output: { name: "executive_report", type: "text" }
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
+    output: { name: "polished_report", type: "text" }
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"
@@ -67,12 +73,14 @@ execution:
     - skill: "consistency-check"
       prompt: "check-consistency"
       step_type: "review"
+      output: { name: "consistency_verdict", type: "decision" }
       context:
         voice_profile: "Neutral professional tone"
         consistency_strictness: "Standard"
     - skill: "brief-compliance-check"
       prompt: "check-brief-compliance"
       step_type: "review"
+      output: { name: "compliance_verdict", type: "decision" }
       context:
         audience_profile: "General professional audience"
         compliance_brief: "No specific compliance requirements"
