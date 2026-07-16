@@ -17,7 +17,7 @@ metadata:
 
 ## Capability
 
-Takes severity-rated security findings and produces a detailed remediation plan for each one. Each plan includes a specific fix recommendation, code examples showing the before and after, effort estimates, and identification of dependencies between fixes. The output is structured to help engineering teams prioritise and schedule remediation work.
+Takes severity-rated security findings and produces a detailed remediation plan for each one. Each plan includes a specific fix recommendation, code examples showing the before and after, effort estimates, and identification of dependencies between fixes. The output is structured to help engineering teams prioritize and schedule remediation work.
 
 ## Remediation Components
 
@@ -37,14 +37,14 @@ Each fix is classified by implementation effort:
 | Level | Description | Typical Duration |
 |-------|-------------|------------------|
 | **Trivial** | Configuration change, one-line fix, or dependency update | Under 1 hour |
-| **Small** | Localised code change in a single file or function | 1–4 hours |
+| **Small** | Localized code change in a single file or function | 1–4 hours |
 | **Medium** | Changes spanning multiple files or requiring new utility functions | 4–16 hours |
 | **Large** | Architectural change, new middleware, or significant refactoring | 1–3 days |
 | **Major** | Fundamental redesign of a subsystem or security model | 3+ days |
 
 ### Dependency Mapping
 
-Fixes are analysed for dependencies on one another:
+Fixes are analyzed for dependencies on one another:
 
 - **Blocking dependencies** — Fix A must be completed before Fix B can be applied (e.g., introducing a sanitisation utility before updating all call sites to use it)
 - **Recommended ordering** — Fix A is not strictly required before Fix B, but doing A first makes B simpler

@@ -2,7 +2,7 @@
 type: workflow
 id: security-audit-pipeline
 title: Security Audit Pipeline
-description: "Orchestrates a full security audit: scan for vulnerabilities, categorise by OWASP type, assess severity, plan remediation, and produce an executive report"
+description: "Orchestrates a full security audit: scan for vulnerabilities, categorize by OWASP type, assess severity, plan remediation, and produce an executive report"
 tags: [Production, Security, Audit, OWASP]
 connections:
   - target: vulnerability-scanning
@@ -89,7 +89,7 @@ execution:
 
 ## Overview
 
-This workflow runs a complete security audit on a codebase. It scans for vulnerabilities, categorises findings by OWASP type, rates severity, produces a remediation plan, and generates a two-part report for executives and engineers. The pipeline is sequential — each stage builds on the output of the previous one.
+This workflow runs a complete security audit on a codebase. It scans for vulnerabilities, categorizes findings by OWASP type, rates severity, produces a remediation plan, and generates a two-part report for executives and engineers. The pipeline is sequential — each stage builds on the output of the previous one.
 
 ## Pipeline Stages
 
@@ -103,13 +103,13 @@ Scan the target codebase for security vulnerabilities across five categories: in
 
 **Output:** Structured list of raw findings with location, description, evidence, and CWE references.
 
-### Stage 2: Finding Categorisation
+### Stage 2: Finding Categorization
 
 **Skill:** finding-categorisation
 
 **Input:** {{steps.Vulnerability Scanning.output}}
 
-Take the raw scan findings and organise them into OWASP Top 10 (2021) categories. Each finding is assigned to a single primary category based on its root cause. The output includes a per-category summary and a distribution table.
+Take the raw scan findings and organize them into OWASP Top 10 (2021) categories. Each finding is assigned to a single primary category based on its root cause. The output includes a per-category summary and a distribution table.
 
 **Output:** Findings grouped by OWASP category with category-level summaries.
 
@@ -117,9 +117,9 @@ Take the raw scan findings and organise them into OWASP Top 10 (2021) categories
 
 **Skill:** severity-assessment
 
-**Input:** {{steps.Finding Categorisation.output}}
+**Input:** {{steps.Finding Categorization.output}}
 
-Evaluate each categorised finding using structured criteria: exploitability (attack vector, authentication, complexity), impact (confidentiality, integrity, availability), and scope (user base, system reach, recovery difficulty). Assign a severity rating of critical, high, medium, or low.
+Evaluate each categorized finding using structured criteria: exploitability (attack vector, authentication, complexity), impact (confidentiality, integrity, availability), and scope (user base, system reach, recovery difficulty). Assign a severity rating of critical, high, medium, or low.
 
 **Output:** Severity-rated findings with justifications and a priority ranking.
 
@@ -146,7 +146,7 @@ Produce the final two-part report. The executive summary covers risk posture, ke
 ## Error Handling
 
 - If the vulnerability scan finds no issues, the pipeline completes with a clean-audit report stating the scope of what was checked
-- If categorisation encounters a finding that does not map to any OWASP category, it is placed in an "Other" group and flagged for manual review
+- If categorization encounters a finding that does not map to any OWASP category, it is placed in an "Other" group and flagged for manual review
 - If the codebase path is inaccessible, the pipeline aborts at Stage 1 with a clear error message
 - Each stage validates that it received non-empty input from the previous stage before proceeding
 
@@ -165,7 +165,7 @@ Produce the final two-part report. The executive summary covers risk posture, ke
 |------|-------------|
 | Executive summary | Risk posture overview for non-technical stakeholders |
 | Technical report | Detailed findings with fix instructions for engineers |
-| Remediation plan | Prioritised fix list with effort estimates and dependencies |
+| Remediation plan | Prioritized fix list with effort estimates and dependencies |
 | Severity summary | Finding counts by severity level |
 | OWASP distribution | Finding counts by OWASP Top 10 category |
 
@@ -180,7 +180,7 @@ No external APIs, MCP servers, or additional credentials are required beyond you
 
 ## Provider Notes
 
-- **Stages 1–3** (scanning, categorisation, severity) benefit from a model with strong analytical and classification capabilities
+- **Stages 1–3** (scanning, categorization, severity) benefit from a model with strong analytical and classification capabilities
 - **Stage 4** (remediation) benefits from a model with code generation strength for producing fix examples
 - **Stage 5** (reporting) benefits from a model with strong writing capabilities for producing clear, audience-appropriate prose
 - The full pipeline is token-intensive — expect 8,000–12,000 tokens across all stages for a moderately sized codebase

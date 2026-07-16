@@ -15,7 +15,7 @@ metadata:
 
 ## Capability
 
-Evaluates each categorised security finding and assigns a severity rating (critical, high, medium, or low) based on a structured assessment of exploitability, impact, and scope. The methodology draws from the Common Vulnerability Scoring System (CVSS) to produce consistent, defensible ratings.
+Evaluates each categorized security finding and assigns a severity rating (critical, high, medium, or low) based on a structured assessment of exploitability, impact, and scope. The methodology draws from the Common Vulnerability Scoring System (CVSS) to produce consistent, defensible ratings.
 
 ## Severity Levels
 
@@ -44,7 +44,7 @@ Examples: stored XSS in a shared dashboard, broken access control allowing horiz
 Findings that require specific conditions to exploit and result in limited damage. Characteristics:
 
 - **Exploitability:** Requires a chain of conditions, insider access, or social engineering to trigger
-- **Impact:** Limited data exposure, localised functionality disruption, or information leakage that aids further attacks
+- **Impact:** Limited data exposure, localized functionality disruption, or information leakage that aids further attacks
 - **Scope:** Affects a small number of users or a non-critical component
 
 Examples: reflected XSS requiring a crafted URL, verbose error messages leaking internal paths, missing rate limiting on a non-critical endpoint.
@@ -54,8 +54,8 @@ Examples: reflected XSS requiring a crafted URL, verbose error messages leaking 
 Findings that represent best-practice deviations or defence-in-depth gaps with minimal direct risk. Characteristics:
 
 - **Exploitability:** Theoretical or requires an already-compromised system to exploit
-- **Impact:** Minimal direct harm; primarily increases attack surface or reduces defence layers
-- **Scope:** Localised to a single component with no cascading effect
+- **Impact:** Minimal direct harm; primarily increases attack surface or reduces defense layers
+- **Scope:** Localized to a single component with no cascading effect
 
 Examples: missing security headers on a non-sensitive page, outdated dependency with no known exploit in the current usage context, overly broad CORS policy on an internal-only endpoint.
 
@@ -78,7 +78,7 @@ Each finding is evaluated across three dimensions:
 | Factor | Question |
 |--------|----------|
 | Confidentiality | What data could be exposed? How sensitive is it? |
-| Integrity | Could an attacker modify data or system behaviour? |
+| Integrity | Could an attacker modify data or system behavior? |
 | Availability | Could this cause a denial of service or data loss? |
 | Compliance | Does this finding trigger regulatory obligations? |
 
@@ -93,7 +93,7 @@ Each finding is evaluated across three dimensions:
 
 ## Output Format
 
-Returns the original categorised findings with added severity fields:
+Returns the original categorized findings with added severity fields:
 
 1. **Severity rating** — critical, high, medium, or low
 2. **Exploitability score** — brief justification of the exploitability assessment

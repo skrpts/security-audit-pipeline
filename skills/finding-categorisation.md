@@ -1,7 +1,7 @@
 ---
 type: skill
 id: finding-categorisation
-title: Finding Categorisation
+title: Finding Categorization
 description: "Groups scan findings by OWASP Top 10 category for structured analysis and reporting"
 tags: [Production, Security, Audit, OWASP]
 connections:
@@ -17,7 +17,7 @@ metadata:
 
 ## Capability
 
-Takes raw vulnerability scan findings and organises them into the OWASP Top 10 (2021) categories. This categorisation provides a standardised framework for understanding the security posture of a codebase and ensures findings are reported in a format that security professionals and auditors recognise.
+Takes raw vulnerability scan findings and organizes them into the OWASP Top 10 (2021) categories. This categorization provides a standardized framework for understanding the security posture of a codebase and ensures findings are reported in a format that security professionals and auditors recognize.
 
 ## OWASP Top 10 Categories
 
@@ -35,7 +35,7 @@ Findings where untrusted data is sent to an interpreter as part of a command or 
 
 ### A04: Insecure Design
 
-Architectural and design-level weaknesses rather than implementation bugs. Includes missing threat modelling, insecure business logic flows, lack of rate limiting on sensitive operations, and absence of defence-in-depth patterns.
+Architectural and design-level weaknesses rather than implementation bugs. Includes missing threat modeling, insecure business logic flows, lack of rate limiting on sensitive operations, and absence of defence-in-depth patterns.
 
 ### A05: Security Misconfiguration
 
@@ -61,12 +61,12 @@ Missing or inadequate logging of security-relevant events — failed login attem
 
 Findings where the application fetches remote resources based on user-supplied URLs without proper validation or restriction. Includes internal network scanning, cloud metadata access, and protocol smuggling.
 
-## Categorisation Process
+## Categorization Process
 
 1. **Map each finding** to one or more OWASP categories based on the vulnerability type and CWE reference
 2. **Resolve ambiguity** — when a finding could fit multiple categories, assign the primary category based on the root cause (e.g., an XSS vulnerability caused by missing input validation maps to A03 Injection, not A05 Misconfiguration)
 3. **Flag uncategorised findings** — any vulnerability that does not clearly map to an OWASP category is placed in an "Other" group with a note explaining why
-4. **Count and summarise** — produce a category-level summary showing the number of findings per OWASP category
+4. **Count and summarize** — produce a category-level summary showing the number of findings per OWASP category
 
 ## Output Format
 
@@ -81,4 +81,4 @@ A final summary table shows the distribution of findings across all ten categori
 
 ## Limitations
 
-Categorisation relies on the quality and completeness of the upstream scan findings. If the scanner missed a vulnerability, it will not appear in any category. Design-level weaknesses (A04) and logging gaps (A09) are particularly difficult to detect from code alone and may require manual review to identify.
+Categorization relies on the quality and completeness of the upstream scan findings. If the scanner missed a vulnerability, it will not appear in any category. Design-level weaknesses (A04) and logging gaps (A09) are particularly difficult to detect from code alone and may require manual review to identify.

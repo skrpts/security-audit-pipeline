@@ -38,7 +38,7 @@ Write this section for **{{input.stakeholder_audience}}**. Assume they understan
 
 #### 1.1 Risk Posture Statement
 
-One paragraph summarising the overall security health. Use language like "acceptable risk," "elevated risk," or "critical risk requiring immediate action." State the headline numbers: total findings, critical count, estimated remediation effort.
+One paragraph summarizing the overall security health. Use language like "acceptable risk," "elevated risk," or "critical risk requiring immediate action." State the headline numbers: total findings, critical count, estimated remediation effort.
 
 #### 1.2 Key Metrics
 

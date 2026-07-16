@@ -17,7 +17,7 @@ metadata:
 
 ## Capability
 
-Generates a two-part security audit report from the completed remediation plan. The executive summary provides a high-level risk posture overview for non-technical stakeholders. The detailed technical report gives engineers the specifics they need to understand, prioritise, and fix each issue.
+Generates a two-part security audit report from the completed remediation plan. The executive summary provides a high-level risk posture overview for non-technical stakeholders. The detailed technical report gives engineers the specifics they need to understand, prioritize, and fix each issue.
 
 ## Executive Summary
 
@@ -55,7 +55,7 @@ The technical report is written for security engineers, developers, and DevOps t
 
 1. **Audit Scope** — what was scanned (repositories, branches, languages, frameworks), what was excluded, and why.
 
-2. **Methodology** — the scanning approach, categorisation framework (OWASP Top 10), and severity rating criteria used.
+2. **Methodology** — the scanning approach, categorization framework (OWASP Top 10), and severity rating criteria used.
 
 3. **Findings by Category** — all findings grouped by OWASP category, each containing:
    - Finding title and unique identifier
@@ -68,7 +68,7 @@ The technical report is written for security engineers, developers, and DevOps t
 
 4. **Dependency Audit Results** — findings related to third-party packages, including CVE references, affected versions, and upgrade paths.
 
-5. **Remediation Priority Matrix** — a table combining severity and effort to produce a prioritised action list.
+5. **Remediation Priority Matrix** — a table combining severity and effort to produce a prioritized action list.
 
 6. **Appendices**
    - Full finding inventory (for reference and tracking)

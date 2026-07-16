@@ -13,7 +13,7 @@ metadata:
 
 ## Purpose
 
-This reference card provides a concise summary of the OWASP Top 10 (2021 edition) — the most widely recognised standard for web application security risks. The finding categorisation skill uses this as its classification framework.
+This reference card provides a concise summary of the OWASP Top 10 (2021 edition) — the most widely recognized standard for web application security risks. The finding categorization skill uses this as its classification framework.
 
 ## OWASP Top 10 — 2021 Edition
 
@@ -51,10 +51,10 @@ Drops to third position. 94% of applications were tested for some form of inject
 
 ### A04:2021 — Insecure Design
 
-A new category for 2021, focusing on risks related to design and architectural flaws. Calls for greater use of threat modelling, secure design patterns, and reference architectures.
+A new category for 2021, focusing on risks related to design and architectural flaws. Calls for greater use of threat modeling, secure design patterns, and reference architectures.
 
 **Common Examples:**
-- Missing or ineffective threat modelling during design
+- Missing or ineffective threat modeling during design
 - Business logic flaws allowing abuse of legitimate features
 - Insufficient rate limiting on sensitive operations
 - Missing defence-in-depth (relying on a single control layer)
@@ -112,7 +112,7 @@ Previously "Insufficient Logging and Monitoring." This category helps detect, es
 - Auditable events (logins, failed logins, high-value transactions) not being logged
 - Warnings and errors generating no, inadequate, or unclear log messages
 - Logs not being monitored for suspicious activity
-- Logs only stored locally with no centralised aggregation
+- Logs only stored locally with no centralized aggregation
 - Alerting thresholds and response escalation processes not in place or effective
 
 ### A10:2021 — Server-Side Request Forgery (SSRF)

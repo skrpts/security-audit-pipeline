@@ -2,7 +2,7 @@
 type: prompt
 id: assess-severity
 title: Assess Severity
-description: "Rates each categorised finding by severity using structured exploitability, impact, and scope criteria"
+description: "Rates each categorized finding by severity using structured exploitability, impact, and scope criteria"
 tags: [Production, Security, Audit, Risk]
 connections:
   - target: severity-assessment
@@ -14,13 +14,13 @@ metadata:
 
 ## Purpose
 
-Evaluates each categorised finding and assigns a severity rating based on exploitability, impact, and scope. Produces consistent, defensible ratings that drive remediation priority.
+Evaluates each categorized finding and assigns a severity rating based on exploitability, impact, and scope. Produces consistent, defensible ratings that drive remediation priority.
 
 ## Prompt
 
-You are a security engineer assessing the severity of vulnerability findings. For each finding in the categorised results below, assign a severity rating and provide a structured justification.
+You are a security engineer assessing the severity of vulnerability findings. For each finding in the categorized results below, assign a severity rating and provide a structured justification.
 
-**Categorised findings:** {{steps.previous.output}}
+**Categorized findings:** {{steps.previous.output}}
 
 ### Severity Scale
 
@@ -28,7 +28,7 @@ Rate each finding as one of:
 
 - **Critical** — directly exploitable with minimal effort; severe consequences (full compromise, mass data breach, complete loss of CIA)
 - **High** — exploitable with moderate effort or preconditions; significant damage (major data exposure, privilege escalation, service disruption)
-- **Medium** — requires specific conditions to exploit; limited damage (localised exposure, information leakage aiding further attacks)
+- **Medium** — requires specific conditions to exploit; limited damage (localized exposure, information leakage aiding further attacks)
 - **Low** — theoretical risk or defence-in-depth gap; minimal direct harm (increased attack surface, best-practice deviation)
 
 ### Assessment Criteria
@@ -46,7 +46,7 @@ For each finding, evaluate three dimensions:
 #### Impact
 
 - What data could be exposed, and how sensitive is it?
-- Could an attacker modify data or system behaviour?
+- Could an attacker modify data or system behavior?
 - Could this cause denial of service or data loss?
 - Does this trigger regulatory or compliance obligations?
 
@@ -66,7 +66,7 @@ For each finding, output:
 3. **Exploitability assessment** — two to three sentences justifying the exploitability evaluation
 4. **Impact assessment** — two to three sentences justifying the impact evaluation
 5. **Scope assessment** — two to three sentences justifying the scope evaluation
-6. **Rationale** — one paragraph summarising why this severity was assigned
+6. **Rationale** — one paragraph summarizing why this severity was assigned
 7. **Priority rank** — numerical rank across all findings (1 = highest priority)
 
 End with a severity summary:
@@ -81,7 +81,7 @@ End with a severity summary:
 ### Rules
 
 - Be consistent — similar vulnerabilities in similar contexts should receive similar ratings
-- Do not inflate severity to appear thorough; do not downplay severity to minimise the report
+- Do not inflate severity to appear thorough; do not downplay severity to minimize the report
 - If two findings have equal severity, rank the one with lower remediation effort higher (it should be fixed first)
-- Preserve all original finding data — do not modify the categorisation or descriptions
+- Preserve all original finding data — do not modify the categorization or descriptions
 - Use British English throughout

@@ -12,7 +12,7 @@ metadata:
 
 ## Security Finding Template
 
-Use this template to document each security finding consistently. Copy one instance per finding and fill in all fields. Remove guidance text in square brackets before finalising the report.
+Use this template to document each security finding consistently. Copy one instance per finding and fill in all fields. Remove guidance text in square brackets before finalizing the report.
 
 ---
 

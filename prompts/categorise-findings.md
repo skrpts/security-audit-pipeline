@@ -1,7 +1,7 @@
 ---
 type: prompt
 id: categorise-findings
-title: Categorise Findings
+title: Categorize Findings
 description: "Groups raw scan findings into OWASP Top 10 categories for structured analysis"
 tags: [Production, Security, Audit, OWASP]
 connections:
@@ -14,11 +14,11 @@ metadata:
 
 ## Purpose
 
-Takes the raw vulnerability scan output and organises every finding into the appropriate OWASP Top 10 (2021) category. This standardised grouping makes the findings immediately useful for security professionals and auditors.
+Takes the raw vulnerability scan output and organizes every finding into the appropriate OWASP Top 10 (2021) category. This standardized grouping makes the findings immediately useful for security professionals and auditors.
 
 ## Prompt
 
-You are a security analyst categorising vulnerability findings against the OWASP Top 10 (2021) framework. Review the scan results below and assign each finding to the most appropriate OWASP category.
+You are a security analyst categorizing vulnerability findings against the OWASP Top 10 (2021) framework. Review the scan results below and assign each finding to the most appropriate OWASP category.
 
 **Scan results:** {{steps.previous.output}}
 
@@ -31,7 +31,7 @@ Map each finding to one of these categories based on its root cause:
 | A01 | Broken Access Control | Missing auth checks, IDOR, CORS misconfiguration |
 | A02 | Cryptographic Failures | Weak algorithms, cleartext transmission, hardcoded keys |
 | A03 | Injection | SQL, command, XSS, template injection |
-| A04 | Insecure Design | Missing threat modelling, insecure business logic |
+| A04 | Insecure Design | Missing threat modeling, insecure business logic |
 | A05 | Security Misconfiguration | Debug mode, default credentials, missing headers |
 | A06 | Vulnerable and Outdated Components | Known CVEs, unmaintained packages |
 | A07 | Identification and Authentication Failures | Weak passwords, session issues, missing MFA |
@@ -39,7 +39,7 @@ Map each finding to one of these categories based on its root cause:
 | A09 | Security Logging and Monitoring Failures | Missing audit logs, unmonitored security events |
 | A10 | Server-Side Request Forgery | Unvalidated URL fetching, internal network access |
 
-### Categorisation Rules
+### Categorization Rules
 
 1. **Primary category only** — assign each finding to the single most relevant category based on its root cause. If a finding could fit multiple categories, choose the one that best describes why the vulnerability exists, not just what it does.
 
@@ -70,7 +70,7 @@ End with a summary table:
 
 ### Rules
 
-- Preserve all original finding data — do not modify or summarise the findings themselves
+- Preserve all original finding data — do not modify or summarize the findings themselves
 - Order categories by finding count (most findings first)
 - If a category has zero findings, omit it from the detailed output but include it in the summary table with a count of 0
 - Use British English throughout

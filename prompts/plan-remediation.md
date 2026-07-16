@@ -38,7 +38,7 @@ Classify the implementation effort:
 | Level | Description | Duration |
 |-------|-------------|----------|
 | Trivial | Configuration change, one-line fix, dependency update | Under 1 hour |
-| Small | Localised code change in a single file | 1–4 hours |
+| Small | Localized code change in a single file | 1–4 hours |
 | Medium | Changes across multiple files or new utility functions | 4–16 hours |
 | Large | New middleware, architectural change, or major refactoring | 1–3 days |
 | Major | Fundamental redesign of a subsystem | 3+ days |
@@ -53,7 +53,7 @@ Note whether this fix:
 
 ### Remediation Plan Structure
 
-Organise the complete output as follows:
+Organize the complete output as follows:
 
 1. **Summary** — total findings, breakdown by effort level, estimated total remediation time
 
