@@ -3,7 +3,7 @@ id: "a80ac015-5e57-452f-b8d4-fd4c1da6064c"
 name: "security-audit-pipeline"
 display_name: "Security Audit Pipeline"
 description: "Scan code for vulnerabilities, categorize findings by OWASP type, prioritize by severity, and produce a remediation roadmap"
-version: "1.0.26"
+version: "1.0.27"
 engine: ">=0.1.0"
 
 # --- Attribution ---
@@ -27,16 +27,16 @@ tags:
 dependencies:
   - id: "4d802a36-2cdd-444e-b3bf-39383793c6b3"
     name: "brief-compliance-check"
-    version: 1.0.1
-    checksum: "sha256:02f438820a02cadaef50eeb6a84f51c3ca4a104bb20d0fa701958733537791e4"
+    version: 1.0.2
+    checksum: "sha256:1b6963d45031ea40dd7f5da0eefda2a9227086244fa5b36713a421ecd7ba8a18"
   - id: "e59f27f4-21ab-4b14-b171-3e9a6100ebaa"
     name: "check-brief-compliance"
-    version: 1.0.1
-    checksum: "sha256:74d0176acf505a04763a401dc7cfed400228bd39d7a5aee7f34def738cb92de0"
+    version: 1.0.4
+    checksum: "sha256:2f7e84a2dd87a535add21c9781fd1ae79f17d4fbc84355919b61ffaba27ad2c2"
   - id: "41cb77d1-e7a5-46dd-a127-6cce685f20b4"
     name: "check-consistency"
-    version: 1.0.5
-    checksum: "sha256:e4da29d0d31343b8b619bb98a993a997501e8c8f6e7a70c8105143a2cc85eed1"
+    version: 1.0.6
+    checksum: "sha256:f8f5e6ee26ff5321e542baedb56114d4256522677296ebabba6e04eb59d06305"
   - id: "bf15c78d-4452-406e-9d54-a72b1a4797c7"
     name: "consistency-check"
     version: 1.0.3
@@ -51,8 +51,8 @@ dependencies:
     checksum: "sha256:18783015383c041de9c3fdaa191b79172ab534348448c20c74f9a967ab4dd917"
   - id: "9b1771e0-39b0-4fbc-8d45-738f51b6083a"
     name: "polish-language"
-    version: 1.0.1
-    checksum: "sha256:2a666b1a1566e45a3d69cf3fac51399a471169184409ef54d588f69b7da7097e"
+    version: 1.0.7
+    checksum: "sha256:637891c464e09eb353932f9a37a59dd8bfe77be7117fb6918e032fba802040d0"
 
 requires:
   services:
@@ -78,7 +78,7 @@ contents:
 
 security:
   status: "pass"
-  scanned_at: "2026-07-16T20:30:17.342Z"
+  scanned_at: "2026-10-25T21:56:35.497Z"
   scanner_version: "3.3.0"
   syntactic: "pass"
   structural: "pass"

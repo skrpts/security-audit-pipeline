@@ -69,6 +69,10 @@ execution:
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"
+    bindings:
+      source:
+        from_step: "Executive Reporting"
+        field: output
   - parallel:
     - skill: "consistency-check"
       prompt: "check-consistency"
@@ -77,6 +81,10 @@ execution:
       context:
         voice_profile: "Neutral professional tone"
         consistency_strictness: "Standard"
+      bindings:
+        source:
+          from_step: "Language Polish"
+          field: output
     - skill: "brief-compliance-check"
       prompt: "check-brief-compliance"
       step_type: "review"
@@ -85,6 +93,10 @@ execution:
         audience_profile: "General professional audience"
         compliance_brief: "No specific compliance requirements"
         compliance_depth: "Standard"
+      bindings:
+        source:
+          from_step: "Language Polish"
+          field: output
 ---
 
 ## Overview
